@@ -1,5 +1,5 @@
 import express from "express";
-import React from "react";
+
 import dotenv from "dotenv";
 import cors from "cors";
 import mongoose, { connect } from "mongoose";
