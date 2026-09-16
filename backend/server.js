@@ -15,12 +15,12 @@ app.use(express.static("uploads"));
 // DataBase Connect
 const connectDB = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://kurmimadhav6_db_user:UibMPfZgVFYpynxR@cluste3.sye0int.mongodb.net/?appName=Cluste3",
-    );
+    await mongoose.connect(process.env.ATLAS_URL);
+
     console.log("MongoDB connected");
-    app.listen(9090, () => {
-      console.log("server is listening on port 9090");
+
+    app.listen(process.env.PORT || 9090, () => {
+      console.log("server is listening");
     });
   } catch (err) {
     console.error("MongoDB connection error:", err);
