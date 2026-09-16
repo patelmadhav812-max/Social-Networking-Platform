@@ -1,0 +1,80 @@
+POST http://localhost:9090/register HTTP/1.1
+content-Type :application/json
+
+{
+    "username": "john_doe",
+    "password": "securepassword",
+    "email": "john.doe@example.com",
+    "name": "John Doe"
+}
+###
+POST http://localhost:9090/register HTTP/1.1
+content-Type :application/json
+
+{
+  "username": "alice_smith",
+  "password": "anotherpassword123",
+  "email": "alice.smith@example.com",
+  "name": "Alice Smith"
+}
+###
+
+POST http://localhost:9090/login HTTP/1.1
+content-Type: application/json
+
+{
+    "email": "alice.smith@example.com",
+    "password":"anotherpassword123"
+
+  
+}
+###
+
+POST http://localhost:9090/login HTTP/1.1
+content-Type: application/json
+
+{
+    "email":"john.doe@example.com",
+    "password":"securepassword"
+
+  
+}
+
+###
+
+GET  http://localhost:9090/get_user_profile 
+content-Type: application/json
+
+{ 
+    
+    "token": "b7268a28f0b0932a3d677ce1fd329e444d7a9e579e117d81a002fab1ff3d3499e0624fcad05a380aa7bbd9d1f539ca0784ca0e12ed93566c93f7efd7e85d3ecc"
+  
+}
+###
+
+POST   http://localhost:9090/update_profile_data 
+content-Type: application/json
+
+{
+  "token": "4949369c77a261728e56dcc616dc20c07bcd408126acc740ec0d393f1a87ac5ab08091bfa50d0f8b3fe32e8e3c98e019ce21a0013e486ed226d0f9eb40a5fac4",
+  "bio": "Full Stack Developer",
+  "currentPost": "Software Developer",
+  "pastWork": [
+    {
+      "company": "Microsoft",
+      "position": "Software Engineer",
+      "years": "2022-2024"
+    }
+  ],
+  "education": [
+    {
+      "school": "IIT Delhi",
+      "degree": "B.Tech",
+      "fieldOfStudy": "Computer Science"
+    }
+  ]
+}
+
+###
+
+GET  http://localhost:9090/get_all_User
