@@ -13,10 +13,13 @@ const userSchema = new Schema({
   email: {
     type: String,
     required: true,
+    trim: true,
+    match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Please use a valid email address"],
   },
   password: {
     type: String,
     required: true,
+    minlength: [6, "password contain more than 6 characters"],
   },
   profilePicture: {
     type: String,
